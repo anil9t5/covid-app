@@ -1,6 +1,4 @@
-import styles from "../../styles/flexStyles.module.css"
-
-const ActiveCases = () => {
+const ActiveCases = ({ styles, active }) => {
   return (
     <div
       className={[
@@ -14,13 +12,13 @@ const ActiveCases = () => {
         </h3>
         <div className={styles.flexDirCol}>
           <span>Active Cases</span>
-          <h5 className="text-green font-weight-bold">550,500</h5>
+          <h5 className="text-green font-weight-bold">{active}</h5>
         </div>
       </div>
       <style jsx>{`
         .overview-box {
           border-radius: 20px;
-          padding: 15px;
+          padding: 10px;
           width: 180px;
           height: auto;
           margin-top: 10px;
@@ -33,14 +31,14 @@ const ActiveCases = () => {
         }
         .text-green {
           color: #429b5e;
-          font-size: 20px;
+          font-size: 18px;
         }
         .icon-wrapper {
           background: #c3e8d1;
           border-radius: 50%;
-          padding: 8px 12px;
-          height: 45px;
-          width: 45px;
+          padding: 6px 10px;
+          height: 40px;
+          width: 40px;
         }
         .icon-color {
           color: #429b5e;

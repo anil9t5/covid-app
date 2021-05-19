@@ -1,7 +1,6 @@
-import styles from "../../styles/flexStyles.module.css"
 import { EntypoNetwork } from "react-entypo"
 
-const TotalCases = () => {
+const TotalCases = ({ styles, cases }) => {
   return (
     <div
       className={[
@@ -16,13 +15,13 @@ const TotalCases = () => {
         </h3>
         <div className={styles.flexDirCol}>
           <span>Total Cases</span>
-          <h5 className="text-blue font-weight-bold">1,450,900</h5>
+          <h5 className="text-blue font-weight-bold">{cases}</h5>
         </div>
       </div>
       <style jsx>{`
         .overview-box {
           border-radius: 20px;
-          padding: 15px;
+          padding: 10px;
           /*border: 1px solid #ebeaf0;*/
           width: 180px;
           height: auto;
@@ -37,13 +36,13 @@ const TotalCases = () => {
         .icon-wrapper {
           background: #b7e6ff;
           border-radius: 50%;
-          padding: 9px 11px;
-          height: 45px;
-          width: 45px;
+          padding: 7px 8px;
+          height: 40px;
+          width: 40px;
         }
         .text-blue {
           color: #2c71ff;
-          font-size: 20px;
+          font-size: 18px;
         }
         :global(.icon-color) {
           color: #2c71ff;

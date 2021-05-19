@@ -1,6 +1,4 @@
-import styles from "../../styles/flexStyles.module.css"
-
-const TotalDeaths = () => {
+const TotalDeaths = ({ styles, deaths }) => {
   return (
     <div
       className={[
@@ -15,13 +13,13 @@ const TotalDeaths = () => {
         </h4>
         <div className={styles.flexDirCol}>
           <span>Total Deaths</span>
-          <h5 className="text-red font-weight-bold">89,000</h5>
+          <h5 className="text-red font-weight-bold">{deaths}</h5>
         </div>
       </div>
       <style jsx>{`
         .overview-box {
           border-radius: 20px;
-          padding: 15px;
+          padding: 10px;
           width: 180px;
           height: auto;
           span {
@@ -36,20 +34,20 @@ const TotalDeaths = () => {
           background: #fcdac9;
           position: relative;
           border-radius: 50%;
-          padding: 9px 12px;
-          height: 45px;
-          width: 45px;
+          padding: 7px 11px;
+          height: 40px;
+          width: 40px;
         }
         .icon-color {
           color: #f55730;
         }
         .text-red {
           color: #f55730;
-          font-size: 20px;
+          font-size: 18px;
         }
         .icon-times {
           font-size: 8px;
-          right: 13px;
+          right: 8px;
           top: 10px;
           position: absolute;
         }

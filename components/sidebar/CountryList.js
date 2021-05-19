@@ -1,41 +1,27 @@
+import React, { useEffect } from "react"
 import Select from "react-select"
+import { connect } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { components } from "react-select"
+import CountriesListData from "./CountriesListData"
+import { fetchCountries } from "../../redux/actions/countriesAction"
+const { Option } = components
 
-const CountryList = () => {
-  const options = [
-    { value: "usa", label: "USA" },
-    { value: "spain", label: "Spain" },
-    { value: "italy", label: "Italy" },
-    { value: "usa", label: "USA" },
-    { value: "spain", label: "Spain" },
-    { value: "italy", label: "Italy" },
-    { value: "usa", label: "USA" },
-    { value: "spain", label: "Spain" },
-    { value: "italy", label: "Italy" },
-    { value: "usa", label: "USA" },
-    { value: "spain", label: "Spain" },
-    { value: "italy", label: "Italy" },
-    { value: "usa", label: "USA" },
-    { value: "spain", label: "Spain" },
-    { value: "italy", label: "Italy" },
-    { value: "usa", label: "USA" },
-    { value: "spain", label: "Spain" },
-    { value: "italy", label: "Italy" },
-    { value: "usa", label: "USA" },
-    { value: "spain", label: "Spain" },
-    { value: "italy", label: "Italy" },
-    { value: "usa", label: "USA" },
-    { value: "spain", label: "Spain" },
-    { value: "italy", label: "Italy" },
-    { value: "usa", label: "USA" },
-    { value: "spain", label: "Spain" },
-    { value: "italy", label: "Italy" },
-    { value: "usa", label: "USA" },
-    { value: "spain", label: "Spain" },
-    { value: "italy", label: "Italy" },
-  ]
+const CountryList = ({ countries }) => {
+  let count = 0
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchCountries())
+  }, [])
   return (
     <>
-      <Select className="scrollableList" options={options} menuIsOpen={true} />
+      <Select
+        instanceId={count + 1}
+        className="scrollableList"
+        options={countries}
+        components={{ Option: CountriesListData }}
+        menuIsOpen={true}
+      />
       <style jsx>{`
         :global(.scrollableList .css-26l3qy-menu) {
           background-color: #f7f9fd;
@@ -75,5 +61,9 @@ const CountryList = () => {
     </>
   )
 }
-
-export default CountryList
+const mapStateToProps = (state) => {
+  return {
+    countries: state.country.countries,
+  }
+}
+export default connect(mapStateToProps)(CountryList)

@@ -7,6 +7,7 @@ const MapChart = () => {
   ]
   return (
     <div className="map-section">
+      <h6>Affected Countries</h6>
       <WorldMap
         color="white"
         value-suffix="people"
@@ -23,6 +24,13 @@ const MapChart = () => {
           border-radius: 25px 25px 25px 25px;
           :global(div) {
             background-color: #6b57bf !important;
+          }
+          h6 {
+            text-align: left;
+            color: #ffffff;
+            background-color: #6b57bf;
+            margin: 0px;
+            padding: 15px 20px;
           }
         }
       `}</style>
