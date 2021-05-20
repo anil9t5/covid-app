@@ -24,7 +24,7 @@ const CountryList = ({ countries }) => {
       />
       <style jsx>{`
         :global(.scrollableList .css-26l3qy-menu) {
-          background-color: #f7f9fd;
+          background-color: #ffffff;
           position: relative !important;
           box-shadow: 0px !important;
           box-shadow: none !important;
