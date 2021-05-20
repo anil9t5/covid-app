@@ -1,5 +1,3 @@
-import { EntypoHome } from "react-entypo"
-
 const Navbar = () => {
   return (
     <header>
@@ -11,7 +9,7 @@ const Navbar = () => {
               alt=""
               width="auto"
               height="25"
-              class="d-inline-block align-text-top"
+              className="d-inline-block align-text-top"
             />
             &nbsp; Covid-19 Alert
           </a>

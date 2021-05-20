@@ -1,7 +1,6 @@
-import styles from "../../styles/flexStyles.module.css"
 import { EntypoNetwork } from "react-entypo"
 
-const TotalCases = () => {
+const TotalCases = ({ styles, cases }) => {
   return (
     <div
       className={[
@@ -9,44 +8,45 @@ const TotalCases = () => {
         styles.justifyCenter,
         styles.flexDirCol,
       ].join(" ")}>
-      <div className={[styles.flexDirRow, styles.spaceAround].join(" ")}>
+      <div className={[styles.flexDirCol, styles.spaceAround].join(" ")}>
         <h3 className="icon-wrapper">
-          {/* <i className="fa fa-globe icon-color" aria-hidden="true" /> */}
           <EntypoNetwork className="icon-color" />
         </h3>
         <div className={styles.flexDirCol}>
           <span>Total Cases</span>
-          <h5 className="text-blue font-weight-bold">1,450,900</h5>
+          <h3 className="text-light font-weight-bold">{cases}</h3>
         </div>
       </div>
       <style jsx>{`
         .overview-box {
-          border-radius: 20px;
+          border-radius: 30px;
           padding: 15px;
           /*border: 1px solid #ebeaf0;*/
           width: 180px;
           height: auto;
           span {
+            color: #ffffff;
             font-size: 14px;
           }
         }
 
         .overview-box-blue {
-          background-color: #e5f6ff;
+          /*background-color: #e5f6ff;*/
+          background-color: #3eb3ff;
+          border: 1px solid #ececf0;
         }
         .icon-wrapper {
-          background: #b7e6ff;
+          background: rgba(255, 255, 255, 0.75);
           border-radius: 50%;
-          padding: 9px 11px;
-          height: 45px;
-          width: 45px;
+          padding: 8px 8px;
+          height: 40px;
+          width: 40px;
         }
-        .text-blue {
-          color: #2c71ff;
-          font-size: 20px;
+        .text-light {
+          color: #fbfbfb;
         }
         :global(.icon-color) {
-          color: #2c71ff;
+          color: #3eb3ff;
         }
       `}</style>
     </div>

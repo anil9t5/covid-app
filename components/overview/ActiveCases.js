@@ -1,46 +1,46 @@
-import styles from "../../styles/flexStyles.module.css"
-
-const ActiveCases = () => {
+const ActiveCases = ({ styles, active }) => {
   return (
     <div
       className={[
-        "overview-box overview-box-green",
+        "overview-box overview-box-bg-light",
         styles.justifyCenter,
         styles.flexDirCol,
       ].join(" ")}>
-      <div className={[styles.flexDirRow, styles.spaceAround].join(" ")}>
+      <div className={[styles.flexDirCol, styles.spaceAround].join(" ")}>
         <h3 className="icon-wrapper">
           <i className="fa fa-dot-circle-o icon-color" aria-hidden="true" />
         </h3>
         <div className={styles.flexDirCol}>
           <span>Active Cases</span>
-          <h5 className="text-green font-weight-bold">550,500</h5>
+          <h3 className="font-weight-bold">{active}</h3>
         </div>
       </div>
       <style jsx>{`
         .overview-box {
-          border-radius: 20px;
+          border-radius: 30px;
+          border: 1px solid #ececf0;
           padding: 15px;
           width: 180px;
           height: auto;
           margin-top: 10px;
           span {
             font-size: 14px;
+            color: #666666;
           }
         }
-        .overview-box-green {
-          background-color: #e2f6e9;
+        .overview-box-bg-light {
+          background-color: #ffffff;
         }
         .text-green {
           color: #429b5e;
-          font-size: 20px;
+          font-size: 18px;
         }
         .icon-wrapper {
           background: #c3e8d1;
           border-radius: 50%;
-          padding: 8px 12px;
-          height: 45px;
-          width: 45px;
+          padding: 6px 9px;
+          height: 40px;
+          width: 40px;
         }
         .icon-color {
           color: #429b5e;

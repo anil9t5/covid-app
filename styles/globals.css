@@ -2,11 +2,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: #ffffff;
+  background-color: #fbf8fb;
   color: #212d38;
-  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
   font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-size: 14px;
 }
 
@@ -21,8 +21,14 @@ a {
 .navbar-custom {
   height: 80px;
 }
+.font-weight-light {
+  font-weight: 300;
+}
 .font-weight-bold {
   font-weight: 600;
+}
+.font-weight-semibold {
+  font-weight: 500;
 }
 .nav-item {
   padding: 10px 15px;

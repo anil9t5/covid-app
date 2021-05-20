@@ -1,12 +1,17 @@
-import Layout from "../components/layout/Layout";
-import "../styles/globals.css";
+import React from "react"
+import { Provider } from "react-redux"
+import { createWrapper } from "next-redux-wrapper"
+import store from "../redux/store"
+import Layout from "../components/layout/Layout"
+import "../styles/globals.css"
 
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Component {...pageProps} />
     </Layout>
-  );
+  )
 }
-
-export default MyApp;
+const makeStore = () => store
+const wrapper = createWrapper(makeStore)
+export default wrapper.withRedux(MyApp)
