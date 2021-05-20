@@ -23,12 +23,12 @@ const MapChart = () => {
           text-align: center;
           border-radius: 25px 25px 25px 25px;
           :global(div) {
-            background-color: #6b57bf !important;
+            background-color: #3eb3ff !important;
           }
           h6 {
             text-align: left;
             color: #ffffff;
-            background-color: #6b57bf;
+            background-color: #3eb3ff;
             margin: 0px;
             padding: 15px 20px;
           }

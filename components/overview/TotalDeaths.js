@@ -13,7 +13,7 @@ const TotalDeaths = ({ styles, deaths }) => {
         </h4>
         <div className={styles.flexDirCol}>
           <span>Total Deaths</span>
-          <h3 className="text-light font-weight-bold">{deaths}</h3>
+          <h4 className="text-light font-weight-bold">{deaths}</h4>
         </div>
       </div>
       <style jsx>{`

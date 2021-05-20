@@ -9,6 +9,13 @@ const { Option } = components
 
 const CountryList = ({ countries }) => {
   let count = 0
+  const countriesValue = countries.map((data) => ({
+    label: data.country,
+    value: data.country.toLowerCase(),
+    cases: data.cases,
+    flag: data.countryInfo.flag,
+  }))
+
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchCountries())
@@ -16,9 +23,10 @@ const CountryList = ({ countries }) => {
   return (
     <>
       <Select
+        value="Select"
         instanceId={count + 1}
         className="scrollableList"
-        options={countries}
+        options={countriesValue}
         components={{ Option: CountriesListData }}
         menuIsOpen={true}
       />
@@ -35,12 +43,19 @@ const CountryList = ({ countries }) => {
           border-top: 0px;
           font-size: 14px;
         }
+        :global(.scrollableList .css-4ljt47-MenuList) {
+          max-height: 500px !important;
+        }
         :global(.css-9gakcf-option) {
-          background-color: #5734d1 !important;
-          cursor: pointer !important;
+          background-color: #ffffff !important;
+          color: #26223e !important;
+        }
+        :global(.css-1n7v3ny-option) {
+          background: none !important;
         }
 
         :global(.css-1pahdxg-control) {
+          padding: 8px !important;
           border: 1px solid #ebeaf0 !important;
           border-radius: 10px 10px 0px 0px !important;
           -webkit-box-shadow: none !important;
@@ -49,13 +64,33 @@ const CountryList = ({ countries }) => {
           font-size: 14px !important;
         }
         :global(.css-yk16xz-control) {
-          border: 1px solid #ebeaf0 !important;
+          padding: 5px;
+          border-top: 1px solid #ebeaf0 !important;
           border-radius: 10px 10px 0px 0px !important;
           border-bottom: 0px;
           font-size: 14px;
+          border-left: 1px solid #ebeaf0 !important;
+          border-right: 1px solid #ebeaf0 !important;
+          border-bottom: 0px !important;
         }
-        :global(.css-1n7v3ny-option) {
-          cursor: pointer !important;
+        :global(.css-1okebmr-indicatorSeparator) {
+          display: none !important;
+        }
+        :global(.css-1gtu0rj-indicatorContainer) {
+          display: none !important;
+        }
+        :global(.css-tlfecz-indicatorContainer) {
+          :global(svg) {
+            display: none !important;
+          }
+        }
+        :global(.css-g1d714-ValueContainer) {
+          overflow: visible !important;
+        }
+        :global(.css-tlfecz-indicatorContainer:before) {
+          font-family: FontAwesome;
+          content: "\f002";
+          color: #26223e;
         }
       `}</style>
     </>

@@ -12,7 +12,7 @@ const ActiveCases = ({ styles, active }) => {
         </h3>
         <div className={styles.flexDirCol}>
           <span>Active Cases</span>
-          <h3 className="font-weight-bold">{active}</h3>
+          <h4 className="font-weight-bold">{active}</h4>
         </div>
       </div>
       <style jsx>{`
@@ -25,7 +25,7 @@ const ActiveCases = ({ styles, active }) => {
           margin-top: 10px;
           span {
             font-size: 14px;
-            color: #666666;
+            color: #8d8c93;
           }
         }
         .overview-box-bg-light {

@@ -5,18 +5,17 @@ import styles from "../../styles/FlexStyles.module.css"
 const CountriesListData = (props) => {
   return (
     <Option {...props}>
-      <div
-        data-cy={props.data.country}
-        className={[styles.flexDirRow, styles.spaceBetween].join(" ")}>
+      <div className={[styles.flexDirRow, styles.spaceBetween].join(" ")}>
         <div className="country-details">
           <div className="image-container">
-            <img src={props.data.countryInfo.flag} alt="" />
+            <img src={props.data.flag} alt="" />
           </div>
-          <span className={styles.alignItemSelfCenter}>
-            {props.data.country}
-          </span>
+          <span className={styles.alignItemSelfCenter}>{props.data.label}</span>
         </div>
-        <h5 className={styles.alignItemSelfCenter}>{props.data.cases}</h5>
+        <h5 className={styles.alignItemSelfCenter}>
+          {props.data.cases}
+          <span> cases</span>
+        </h5>
       </div>
       <style jsx>{`
         .country-details {
@@ -26,6 +25,7 @@ const CountriesListData = (props) => {
           position: relative;
           span {
             padding-left: 12px;
+            color: #8d8c93;
           }
           .image-container {
             width: 40px;
@@ -41,8 +41,14 @@ const CountriesListData = (props) => {
           }
         }
         h5 {
-          font-size: 18px;
+          font-size: 16px;
           font-weight: bold;
+          margin-bottom: 0;
+          span {
+            font-size: 11px;
+            font-weight: 300;
+            color: #8d8c93;
+          }
         }
       `}</style>
     </Option>
