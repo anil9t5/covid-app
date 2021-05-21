@@ -12,38 +12,38 @@ const Recovered = ({ styles, recovered }) => {
         </h3>
         <div className={styles.flexDirCol}>
           <span>Recovered Cases</span>
-          <h4 className="font-weight-bold">{recovered}</h4>
+          <h3 className="font-weight-bold">{recovered}</h3>
         </div>
       </div>
       <style jsx>{`
         .overview-box {
           border-radius: 30px;
-          border: 1px solid #ececf0;
+          border: 1px solid #e2ebff;
           padding: 15px;
           width: 180px;
           height: auto;
           margin-top: 10px;
           span {
             font-size: 14px;
-            color: #8d8c93;
+            color: #7c98c4;
           }
         }
         .overview-box-bg-light {
           background-color: #ffffff;
         }
         .text-purple {
-          color: #604bba;
+          color: #30357c;
           font-size: 18px;
         }
         .icon-wrapper {
-          background: #d9d3ff;
+          background: #ebebf7;
           border-radius: 50%;
           padding: 7px 8px;
           height: 40px;
           width: 40px;
         }
         .icon-color {
-          color: #604bba;
+          color: #30357c;
         }
       `}</style>
     </div>

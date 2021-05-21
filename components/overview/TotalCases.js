@@ -14,7 +14,7 @@ const TotalCases = ({ styles, cases }) => {
         </h3>
         <div className={styles.flexDirCol}>
           <span>Total Cases</span>
-          <h4 className="text-light font-weight-bold">{cases}</h4>
+          <h3 className="text-light font-weight-bold">{cases}</h3>
         </div>
       </div>
       <style jsx>{`
@@ -32,7 +32,7 @@ const TotalCases = ({ styles, cases }) => {
 
         .overview-box-blue {
           /*background-color: #e5f6ff;*/
-          background-color: #5734d1;
+          background-color: #30357c;
           border: 1px solid #ececf0;
         }
         .icon-wrapper {
@@ -46,7 +46,7 @@ const TotalCases = ({ styles, cases }) => {
           color: #fbfbfb;
         }
         :global(.icon-color) {
-          color: #5734d1;
+          color: #30357c;
         }
       `}</style>
     </div>

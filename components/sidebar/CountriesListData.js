@@ -25,7 +25,7 @@ const CountriesListData = (props) => {
           position: relative;
           span {
             padding-left: 12px;
-            color: #8d8c93;
+            color: #5b73a0;
           }
           .image-container {
             width: 40px;
@@ -46,8 +46,8 @@ const CountriesListData = (props) => {
           margin-bottom: 0;
           span {
             font-size: 11px;
-            font-weight: 300;
-            color: #8d8c93;
+            font-weight: 400;
+            color: #5b73a0 !important;
           }
         }
       `}</style>

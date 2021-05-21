@@ -31,15 +31,21 @@ const CountryList = ({ countries }) => {
         menuIsOpen={true}
       />
       <style jsx>{`
+        :global(.scrollableList) {
+          box-shadow: 10px 5px 25px rgba(48, 53, 124, 0.05);
+          margin-bottom: 25px;
+          border-radius: 20px;
+        }
         :global(.scrollableList .css-26l3qy-menu) {
           background-color: #ffffff;
           position: relative !important;
           box-shadow: 0px !important;
           box-shadow: none !important;
-          border: 1px solid #ebeaf0;
-          border-radius: 0px 0px 10px 10px;
+
+          border-radius: 0px 0px 20px 20px;
           overflow: hidden;
           margin-top: 0px;
+          margin-bottom: 0px;
           border-top: 0px;
           font-size: 14px;
         }
@@ -56,8 +62,8 @@ const CountryList = ({ countries }) => {
 
         :global(.css-1pahdxg-control) {
           padding: 8px !important;
-          border: 1px solid #ebeaf0 !important;
-          border-radius: 10px 10px 0px 0px !important;
+          border: 0px !important;
+          border-radius: 20px 20px 0px 0px !important;
           -webkit-box-shadow: none !important;
           -moz-box-shadow: none !important;
           box-shadow: none !important;
@@ -65,12 +71,11 @@ const CountryList = ({ countries }) => {
         }
         :global(.css-yk16xz-control) {
           padding: 5px;
-          border-top: 1px solid #ebeaf0 !important;
-          border-radius: 10px 10px 0px 0px !important;
+          border: 0px !important;
+          border-radius: 20px 20px 0px 0px !important;
           border-bottom: 0px;
           font-size: 14px;
-          border-left: 1px solid #ebeaf0 !important;
-          border-right: 1px solid #ebeaf0 !important;
+
           border-bottom: 0px !important;
         }
         :global(.css-1okebmr-indicatorSeparator) {
@@ -86,6 +91,10 @@ const CountryList = ({ countries }) => {
         }
         :global(.css-g1d714-ValueContainer) {
           overflow: visible !important;
+          margin: 5px !important;
+        }
+        :global(.css-1wa3eu0-placeholder, .css-b8ldur-Input, .css-gg45go-NoOptionsMessage) {
+          color: #5b73a0 !important;
         }
         :global(.css-tlfecz-indicatorContainer:before) {
           font-family: FontAwesome;

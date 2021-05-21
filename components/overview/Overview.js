@@ -8,12 +8,18 @@ import MapChart from "./MapChart"
 import { connect } from "react-redux"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchOverview } from "../../redux/actions/overviewAction"
-
+import { fetchCountries } from "../../redux/actions/countriesAction"
 import styles from "../../styles/FlexStyles.module.css"
-const Overview = ({ overviews }) => {
+const Overview = ({ overviews, countries }) => {
+  const countriesValue = countries.map((data) => ({
+    country: `${data.countryInfo.iso2}`.toLowerCase(),
+    value: data.cases,
+  }))
+
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchOverview())
+    dispatch(fetchCountries())
   }, [])
   return (
     <>
@@ -32,7 +38,7 @@ const Overview = ({ overviews }) => {
           </div>
         </div>
         <div className="col-md-7">
-          <MapChart />
+          <MapChart countriesValue={countriesValue} />
         </div>
       </div>
       <Chart />
@@ -43,6 +49,7 @@ const Overview = ({ overviews }) => {
 const mapStateToProps = (state) => {
   return {
     overviews: state.overview.overviews,
+    countries: state.country.countries,
   }
 }
 export default connect(mapStateToProps)(Overview)

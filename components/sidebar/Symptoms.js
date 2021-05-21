@@ -21,19 +21,21 @@ const Symptoms = () => {
       <style jsx>{`
         .content {
           position: relative;
-          background: #c3e8d1;
-          border-radius: 15px;
+          background: #ffffff;
+          box-shadow: 10px 5px 25px rgba(48, 53, 124, 0.05);
+          border-radius: 20px;
           padding: 20px 12px;
           span {
             font-size: 12px;
           }
         }
         .avatar-box {
-          background-color: #ffffff;
+          background-color: #dcfaf8;
           width: 60px;
           height: 60px;
           overflow: hidden;
           border-radius: 50%;
+          border: 1px solid #e2ebff;
         }
         .avatar-image {
           margin-top: 6px;
@@ -43,8 +45,9 @@ const Symptoms = () => {
           margin-top: 5px;
         }
         .btn-rounded {
-          background-color: #429b5e;
+          background-color: #43ccc5;
           border-radius: 25px;
+          font-weight: 500;
           border: 0px;
           font-size: 11px !important;
         }

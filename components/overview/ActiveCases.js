@@ -12,20 +12,20 @@ const ActiveCases = ({ styles, active }) => {
         </h3>
         <div className={styles.flexDirCol}>
           <span>Active Cases</span>
-          <h4 className="font-weight-bold">{active}</h4>
+          <h3 className="font-weight-bold">{active}</h3>
         </div>
       </div>
       <style jsx>{`
         .overview-box {
           border-radius: 30px;
-          border: 1px solid #ececf0;
+          border: 1px solid #e2ebff;
           padding: 15px;
           width: 180px;
           height: auto;
           margin-top: 10px;
           span {
             font-size: 14px;
-            color: #8d8c93;
+            color: #7c98c4;
           }
         }
         .overview-box-bg-light {
@@ -36,14 +36,14 @@ const ActiveCases = ({ styles, active }) => {
           font-size: 18px;
         }
         .icon-wrapper {
-          background: #c3e8d1;
+          background: #e8fcfa;
           border-radius: 50%;
           padding: 6px 9px;
           height: 40px;
           width: 40px;
         }
         .icon-color {
-          color: #429b5e;
+          color: #49dbcc;
         }
       `}</style>
     </div>

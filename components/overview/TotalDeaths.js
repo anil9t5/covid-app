@@ -13,7 +13,7 @@ const TotalDeaths = ({ styles, deaths }) => {
         </h4>
         <div className={styles.flexDirCol}>
           <span>Total Deaths</span>
-          <h4 className="text-light font-weight-bold">{deaths}</h4>
+          <h3 className="text-light font-weight-bold">{deaths}</h3>
         </div>
       </div>
       <style jsx>{`
@@ -29,7 +29,7 @@ const TotalDeaths = ({ styles, deaths }) => {
           }
         }
         .overview-box-red {
-          background-color: #f77aae;
+          background-color: #f782ac;
         }
 
         .icon-wrapper {
@@ -41,7 +41,7 @@ const TotalDeaths = ({ styles, deaths }) => {
           width: 40px;
         }
         .icon-color {
-          color: #f77aae;
+          color: #f782ac;
         }
         .text-light {
           color: #fbfbfb;
