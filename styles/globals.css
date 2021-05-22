@@ -39,3 +39,27 @@ a {
 .nav-link:hover {
   color: #604bba !important;
 }
+.btn-rounded {
+  background-color: #43ccc5;
+  border-radius: 25px;
+  font-weight: 600;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 0px;
+  font-size: 12px !important;
+}
+.btn-success:hover,
+.btn-success:focus {
+  color: #fff;
+  background-color: #3fc1b4;
+  border-color: #e8fcfa;
+}
+.m-top-10 {
+  margin-top: 10px;
+}
+.m-top-20 {
+  margin-top: 20px;
+}
+.m-top-30 {
+  margin-top: 30px;
+}

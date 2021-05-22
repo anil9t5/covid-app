@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
     <div className={flexStyles.flexDirCol}>
       <CountryList />
-      <Symptoms />
+      {/* <Symptoms /> */}
     </div>
   )
 }

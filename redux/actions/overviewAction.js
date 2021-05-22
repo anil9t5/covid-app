@@ -9,3 +9,11 @@ export const fetchOverview = () => async (dispatch) => {
     payload: response.data,
   })
 }
+
+// export const newCases = () => async (dispatch) => {
+//   const response = await covidApi.get(`${API_URL}/historical/all?lastdays=120`)
+//   dispatch({
+//     type: types.GET_NEW_CASES,
+//     payload: response.data,
+//   })
+// }

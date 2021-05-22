@@ -44,13 +44,6 @@ const Symptoms = () => {
         .btn-box {
           margin-top: 5px;
         }
-        .btn-rounded {
-          background-color: #43ccc5;
-          border-radius: 25px;
-          font-weight: 500;
-          border: 0px;
-          font-size: 11px !important;
-        }
       `}</style>
     </div>
   )
