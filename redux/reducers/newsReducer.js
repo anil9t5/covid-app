@@ -1,6 +1,7 @@
 import * as types from "../types"
 const initialState = {
   news: [],
+  news_list: [],
 }
 export const newsReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -8,6 +9,11 @@ export const newsReducer = (state = initialState, action) => {
       return {
         ...state,
         news: action.payload,
+      }
+    case types.GET_ALL_NEWS:
+      return {
+        ...state,
+        news_list: action.payload,
       }
     default:
       return state

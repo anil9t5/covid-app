@@ -23,7 +23,7 @@ const TotalCases = ({ styles, cases }) => {
           padding: 15px;
           /*border: 1px solid #ebeaf0;*/
           width: 180px;
-          height: auto;
+          height: 160px;
           span {
             color: #ffffff;
             font-size: 14px;

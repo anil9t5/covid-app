@@ -21,7 +21,7 @@ const ActiveCases = ({ styles, active }) => {
           border: 1px solid #e2ebff;
           padding: 15px;
           width: 180px;
-          height: auto;
+          height: 160px;
           margin-top: 10px;
           span {
             font-size: 14px;

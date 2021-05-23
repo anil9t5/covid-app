@@ -14,19 +14,3 @@ export async function get(url) {
       console.log("err")
     })
 }
-
-export async function newsHighlight(url) {
-  return fetch(url, {
-    method: "GET",
-    headers: {
-      "x-rapidapi-key": "a982f0fdaamsh2336baeb3c02c75p1cb1e1jsn99eb01750c78",
-      "x-rapidapi-host": "coronavirus-smartable.p.rapidapi.com",
-    },
-  })
-    .then(async (response) => {
-      return await response.json()
-    })
-    .catch((err) => {
-      console.error(err)
-    })
-}

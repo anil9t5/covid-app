@@ -31,13 +31,25 @@ a {
   font-weight: 500;
 }
 .nav-item {
-  padding: 10px 15px;
+  padding: 10px 10px;
 }
 .nav-link {
-  color: #212d38 !important;
+  color: #363f6c !important;
+  font-size: 20px;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  padding-bottom: 0px !important;
+  border-radius: 10px !important;
+  border: 1px solid #dde5ff;
 }
 .nav-link:hover {
-  color: #604bba !important;
+  color: #ffffff !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  padding-bottom: 0px !important;
+  border-radius: 10px !important;
+  background-color: #30357c !important;
+  color: #ffffff !important;
 }
 .btn-rounded {
   background-color: #43ccc5;
@@ -62,4 +74,7 @@ a {
 }
 .m-top-30 {
   margin-top: 30px;
+}
+.m-left-8 {
+  margin-left: 8px;
 }

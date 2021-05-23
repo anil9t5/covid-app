@@ -22,7 +22,7 @@ const TotalDeaths = ({ styles, deaths }) => {
           border: 1px solid #ececf0;
           padding: 15px;
           width: 180px;
-          height: auto;
+          height: 160px;
           span {
             color: #ffffff;
             font-size: 14px;
