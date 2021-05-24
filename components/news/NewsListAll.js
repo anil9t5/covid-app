@@ -2,13 +2,15 @@ import { useEffect } from "react"
 import { connect, useDispatch } from "react-redux"
 import { fetchAllNews } from "../../redux/actions/newsAction"
 import { EntypoArrowLongLeft } from "react-entypo"
+import Link from "next/link"
+import { useRouter } from "next/router"
 import Moment from "react-moment"
 import { Scrollbars } from "rc-scrollbars"
 import styles from "../../styles/FlexStyles.module.css"
 
 const NewsListAll = ({ news_list }) => {
-  console.log(news_list)
   const dispatch = useDispatch()
+  const router = useRouter()
   useEffect(() => {
     dispatch(fetchAllNews())
   }, [])
@@ -16,7 +18,19 @@ const NewsListAll = ({ news_list }) => {
   const goBack = () => {
     dispatch({ type: "TOGGLE_OVERVIEW", payload: false })
   }
-
+  const checkoutNews = (data) => {
+    router.push({
+      pathname: `news`,
+      query: {
+        title: data.title,
+        url: data.urlToImage,
+        publishedAt: data.publishedAt,
+        source: data.source["name"],
+        content: data.content,
+        author: data.author,
+      },
+    })
+  }
   return (
     <div>
       <div className={[styles.flexDirRow, styles.spaceBetween].join(" ")}>
@@ -33,31 +47,46 @@ const NewsListAll = ({ news_list }) => {
           {news_list.length > 0 &&
             news_list.map((data) => (
               <div className="col-md-3">
-                <div className="news-section">
-                  <div className="news-image-box">
-                    {data.urlToImage == null ||
-                    data.urlToImage == "/Static/img/tasnim-main-logo.jpg" ? (
-                      <img src="./images/no_result_found.png" alt="image" />
-                    ) : (
-                      <img src={data.urlToImage} alt="image" />
-                    )}
-                  </div>
-                  <div className="news-content">
-                    <h6>{data.title}</h6>
-                    <span>{data.source["name"]}</span>
-                    <div className="timestamp">
-                      <i className="fa fa-calendar-o" aria-hidden="true" />
-                      &nbsp;
-                      <Moment fromNow>{data.publishedAt}</Moment>
+                <Link
+                  as={`/news/${data.title}`}
+                  href={{
+                    pathname: "/news",
+                    query: {
+                      title: data.title,
+                      url: data.urlToImage,
+                      publishedAt: data.publishedAt,
+                      source: data.source["name"],
+                      content: data.content,
+                      author: data.author,
+                    },
+                  }}>
+                  <div id={data.title} className="news-section">
+                    <div className="news-image-box">
+                      {data.urlToImage == null ||
+                      data.urlToImage == "/Static/img/tasnim-main-logo.jpg" ? (
+                        <img src="./images/no_result_found.png" alt="image" />
+                      ) : (
+                        <img src={data.urlToImage} alt="image" />
+                      )}
+                    </div>
+                    <div className="news-content">
+                      <h6>{data.title}</h6>
+                      <span>{data.source["name"]}</span>
+                      <div className="timestamp">
+                        <i className="fa fa-calendar-o" aria-hidden="true" />
+                        &nbsp;
+                        <Moment fromNow>{data.publishedAt}</Moment>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
         </Scrollbars>
       </div>
       <style jsx>{`
         .news-section {
+          cursor: pointer;
           overflow: hidden;
           border: 1px solid #e2ebff;
           border-radius: 15px;
@@ -118,4 +147,5 @@ const mapStateToProps = (state) => {
     news_list: state.newsList.news_list,
   }
 }
+
 export default connect(mapStateToProps)(NewsListAll)
