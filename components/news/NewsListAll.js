@@ -32,7 +32,7 @@ const NewsListAll = ({ news_list }) => {
     })
     router.push("/?news_details")
   }
-  console.log(news_list)
+
   return (
     <div>
       <div className={[styles.flexDirRow, styles.spaceBetween].join(" ")}>
