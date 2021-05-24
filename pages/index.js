@@ -3,28 +3,46 @@ import Sidebar from "../components/sidebar/Sidebar"
 import { useEffect } from "react"
 import { connect } from "react-redux"
 import { useDispatch } from "react-redux"
-import { toggleOverviewAction } from "../redux/actions/toggleAction"
+import { useRouter } from "next/router"
+import { fetchAllNews, newsDetailsAction } from "../redux/actions/newsAction"
+import {
+  toggleOverviewAction,
+  toggleNewsAction,
+} from "../redux/actions/toggleAction"
 import NewsListAll from "../components/news/NewsListAll"
-function Home({ toggleOverview }) {
-  console.log("Value: ", toggleOverview)
+import NewsInner from "../components/news/NewsInner"
+function Home({ news_list, toggleOverview, checkoutNews, newsDetails }) {
   const dispatch = useDispatch()
   useEffect(() => {
+    dispatch(fetchAllNews())
     dispatch(toggleOverviewAction())
+    dispatch(toggleNewsAction())
+    dispatch(newsDetailsAction())
   }, [])
+  console.log(newsDetails)
   return (
     <div className="row">
       <div className="col-lg-3">
         <Sidebar />
       </div>
       <div className="col-lg-9">
-        {toggleOverview === true ? <NewsListAll /> : <Overview />}
+        {toggleOverview === true ? (
+          <NewsListAll news_list={news_list} />
+        ) : checkoutNews === true ? (
+          <NewsInner newsDetail={newsDetails} />
+        ) : (
+          <Overview />
+        )}
       </div>
     </div>
   )
 }
 const mapStateToProps = (state) => {
   return {
+    news_list: state.newsList.news_list,
     toggleOverview: state.toggle.toggleOverview,
+    checkoutNews: state.checkout.newsItemCheckout,
+    newsDetails: state.newsDetail.news_details,
   }
 }
 export default connect(mapStateToProps)(Home)

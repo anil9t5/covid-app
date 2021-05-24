@@ -9,5 +9,6 @@ export default combineReducers({
   news: newsReducer,
   newsList: newsReducer,
   toggle: toggleReducer,
-  checkout: newsReducer,
+  checkout: toggleReducer,
+  newsDetail: newsReducer,
 })

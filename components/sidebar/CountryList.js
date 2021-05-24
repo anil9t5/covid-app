@@ -52,6 +52,9 @@ const CountryList = ({ countries }) => {
         :global(.scrollableList .css-4ljt47-MenuList) {
           max-height: 600px !important;
         }
+        :global(.scrollableList .css-11unzgr) {
+          max-height: 600px !important;
+        }
         :global(.css-9gakcf-option) {
           background-color: #ffffff !important;
           color: #26223e !important;
