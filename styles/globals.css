@@ -128,7 +128,10 @@ a {
   .prevention-steps-section .image-box {
     width: 80px !important;
   }
-  .css-4ljt47-MenuList {
+  .scrollableList .css-4ljt47-MenuList {
+    max-height: 300px !important;
+  }
+  .scrollableList .css-11unzgr {
     max-height: 300px !important;
   }
   .news-section {
