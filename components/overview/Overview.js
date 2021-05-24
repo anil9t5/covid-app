@@ -28,11 +28,12 @@ const Overview = ({ overviews, countries, news }) => {
   return (
     <>
       <div className="row">
-        <div className={["col-md-5", styles.flexContent].join(" ")}>
+        <div className={["col-md-5 col-sm-12", styles.flexContent].join(" ")}>
           <div>
             <h5 className="m-left-8">Worldwide</h5>
             <div
               className={[
+                "overview-box-container",
                 styles.flexDirRow,
                 styles.flexWrap,
                 styles.spaceAround,
@@ -44,7 +45,7 @@ const Overview = ({ overviews, countries, news }) => {
             </div>
           </div>
         </div>
-        <div className="col-md-7">
+        <div className="col-md-7 col-sm-12">
           <MapChart countriesValue={countriesValue} />
         </div>
       </div>

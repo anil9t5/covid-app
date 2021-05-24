@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import { useDispatch } from "react-redux"
 import { EntypoArrowLongLeft } from "react-entypo"
+import Moment from "react-moment"
 import styles from "../../styles/FlexStyles.module.css"
 
 const NewsInner = ({ newsDetail }) => {
@@ -41,6 +42,11 @@ const NewsInner = ({ newsDetail }) => {
             <div className="news-content">
               <h4>{newsDetail.title}</h4>
               <span>Category: {newsDetail.category}</span>
+              <div className="timestamp">
+                <i className="fa fa-calendar-o" aria-hidden="true" />
+                &nbsp;
+                <Moment fromNow>{newsDetail.date}</Moment>
+              </div>
               <p>{newsDetail.content}</p>
             </div>
           </div>
@@ -74,6 +80,11 @@ const NewsInner = ({ newsDetail }) => {
             padding-top: 5px;
             padding-right: 5px;
           }
+        }
+        .timestamp {
+          font-size: 12px;
+          margin-top: 10px;
+          margin-bottom: 15px;
         }
       `}</style>
     </div>

@@ -27,6 +27,7 @@ const NewsListAll = ({ news_list }) => {
         url: data.image,
         category: data.category,
         content: data.description,
+        date: data.published_at,
       },
     })
     router.push("/?news_details")

@@ -1,3 +1,4 @@
+import NumberFormat from "react-number-format"
 const ActiveCases = ({ styles, active }) => {
   return (
     <div
@@ -12,7 +13,13 @@ const ActiveCases = ({ styles, active }) => {
         </h3>
         <div className={styles.flexDirCol}>
           <span>Active Cases</span>
-          <h3 className="font-weight-bold">{active}</h3>
+          <h3 className="font-weight-bold">
+            <NumberFormat
+              value={active}
+              displayType={"text"}
+              thousandSeparator={true}
+            />
+          </h3>
         </div>
       </div>
       <style jsx>{`

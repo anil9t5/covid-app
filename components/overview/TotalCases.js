@@ -1,5 +1,5 @@
 import { EntypoNetwork } from "react-entypo"
-
+import NumberFormat from "react-number-format"
 const TotalCases = ({ styles, cases }) => {
   return (
     <div
@@ -14,7 +14,13 @@ const TotalCases = ({ styles, cases }) => {
         </h3>
         <div className={styles.flexDirCol}>
           <span>Total Cases</span>
-          <h3 className="text-light font-weight-bold">{cases}</h3>
+          <h3 className="text-light font-weight-bold">
+            <NumberFormat
+              value={cases}
+              displayType={"text"}
+              thousandSeparator={true}
+            />
+          </h3>
         </div>
       </div>
       <style jsx>{`

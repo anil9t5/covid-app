@@ -1,3 +1,4 @@
+import NumberFormat from "react-number-format"
 const Recovered = ({ styles, recovered }) => {
   return (
     <div
@@ -12,7 +13,13 @@ const Recovered = ({ styles, recovered }) => {
         </h3>
         <div className={styles.flexDirCol}>
           <span>Recovered Cases</span>
-          <h3 className="font-weight-bold">{recovered}</h3>
+          <h3 className="font-weight-bold">
+            <NumberFormat
+              value={recovered}
+              displayType={"text"}
+              thousandSeparator={true}
+            />
+          </h3>
         </div>
       </div>
       <style jsx>{`

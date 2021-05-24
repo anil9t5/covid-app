@@ -1,4 +1,5 @@
 import { components } from "react-select"
+import NumberFormat from "react-number-format"
 const { Option } = components
 import styles from "../../styles/FlexStyles.module.css"
 
@@ -13,7 +14,11 @@ const CountriesListData = (props) => {
           <span className={styles.alignItemSelfCenter}>{props.data.label}</span>
         </div>
         <h5 className={styles.alignItemSelfCenter}>
-          {props.data.cases}
+          <NumberFormat
+            value={props.data.cases}
+            displayType={"text"}
+            thousandSeparator={true}
+          />
           <span> cases</span>
         </h5>
       </div>

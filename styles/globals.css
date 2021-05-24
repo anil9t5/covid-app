@@ -94,3 +94,17 @@ a {
     margin-top: 20px;
   }
 }
+
+/* 2436x1125px at 458ppi */
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .overview-box {
+    width: 175px !important;
+  }
+  .overview-box-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .prevention-steps-section .image-box {
+    width: 80px;
+  }
+}

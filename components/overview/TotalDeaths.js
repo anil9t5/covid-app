@@ -1,3 +1,4 @@
+import NumberFormat from "react-number-format"
 const TotalDeaths = ({ styles, deaths }) => {
   return (
     <div
@@ -13,7 +14,13 @@ const TotalDeaths = ({ styles, deaths }) => {
         </h4>
         <div className={styles.flexDirCol}>
           <span>Total Deaths</span>
-          <h3 className="text-light font-weight-bold">{deaths}</h3>
+          <h3 className="text-light font-weight-bold">
+            <NumberFormat
+              value={deaths}
+              displayType={"text"}
+              thousandSeparator={true}
+            />
+          </h3>
         </div>
       </div>
       <style jsx>{`
