@@ -48,7 +48,9 @@ const News = ({ news }) => {
             styles.flexDirCol,
             styles.spaceAround,
           ].join(" ")}>
-          <h5 className="font-weight-bold" onClick={() => checkoutNews(news)}>
+          <h5
+            className="title font-weight-bold"
+            onClick={() => checkoutNews(news)}>
             {news.title}
           </h5>
           <span>Category: {news.category}</span>
@@ -103,6 +105,9 @@ const News = ({ news }) => {
             padding: 20px;
             .btn-section {
               margin-top: 10px;
+            }
+            .title {
+              cursor: pointer;
             }
           }
           .loading {
