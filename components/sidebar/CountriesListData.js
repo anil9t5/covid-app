@@ -19,7 +19,7 @@ const CountriesListData = (props) => {
             displayType={"text"}
             thousandSeparator={true}
           />
-          <span> cases</span>
+          <span className="hide-on-small-devices"> cases</span>
         </h5>
       </div>
       <style jsx>{`

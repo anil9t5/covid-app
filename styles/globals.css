@@ -95,7 +95,7 @@ a {
   }
 }
 
-/* 2436x1125px at 458ppi */
+/* iPhones media query 2436x1125px at 458ppi */
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .overview-box {
     width: 175px !important;
@@ -105,9 +105,54 @@ a {
     margin-bottom: 15px;
   }
   .prevention-steps-section .image-box {
-    width: 80px;
+    width: 80px !important;
   }
   .css-4ljt47-MenuList {
     max-height: 300px !important;
+  }
+  .news-section {
+    height: 188px !important;
+  }
+}
+
+/* Smartphones in portrait mode (0-479px) */
+@media only screen and (max-width: 479px) {
+  /* your css goes here */
+  .overview-box {
+    width: 175px !important;
+  }
+  .overview-box-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .prevention-steps-section .image-box {
+    width: 80px !important;
+  }
+  .css-4ljt47-MenuList {
+    max-height: 300px !important;
+  }
+  .news-section {
+    height: 188px !important;
+  }
+}
+
+/* ----------- iPad Pro ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+  .overview-box {
+    width: 135px !important;
+  }
+  .overview-box span {
+    font-size: 18px;
+  }
+  .css-4ljt47-MenuList h5 {
+    font-size: 14px !important;
+  }
+  .country-details .image-container {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .hide-on-small-devices {
+    display: none;
   }
 }
