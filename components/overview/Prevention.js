@@ -1,5 +1,5 @@
-import React from "react"
 import styles from "../../styles/FlexStyles.module.css"
+
 const Prevention = () => {
   return (
     <div className="content">

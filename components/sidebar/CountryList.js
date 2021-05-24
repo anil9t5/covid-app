@@ -3,8 +3,8 @@ import Select from "react-select"
 import { connect } from "react-redux"
 import { useDispatch, useSelector } from "react-redux"
 import { components } from "react-select"
-import CountriesListData from "./CountriesListData"
 import { fetchCountries } from "../../redux/actions/countriesAction"
+import CountriesListData from "./CountriesListData"
 const { Option } = components
 
 const CountryList = ({ countries }) => {
