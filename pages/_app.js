@@ -1,5 +1,4 @@
 import React from "react"
-import { Provider } from "react-redux"
 import { createWrapper } from "next-redux-wrapper"
 import store from "../redux/store"
 import Layout from "../components/layout/Layout"

@@ -1,7 +1,5 @@
-import { useEffect } from "react"
 import { connect, useDispatch } from "react-redux"
 import { EntypoArrowLongLeft } from "react-entypo"
-import { newsDetailsAction } from "../../redux/actions/newsAction"
 import { useRouter } from "next/router"
 import { Scrollbars } from "rc-scrollbars"
 import Moment from "react-moment"
@@ -15,6 +13,7 @@ const NewsListAll = ({ news_list }) => {
     dispatch({ type: "TOGGLE_OVERVIEW", payload: false })
     router.push("/")
   }
+
   const checkoutNews = (data) => {
     dispatch({ type: "TOGGLE_OVERVIEW", payload: false })
     dispatch({

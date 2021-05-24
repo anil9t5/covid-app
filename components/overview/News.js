@@ -1,11 +1,12 @@
 import { useDispatch } from "react-redux"
-import Moment from "react-moment"
 import { useRouter } from "next/router"
+import Moment from "react-moment"
 import styles from "../../styles/FlexStyles.module.css"
 
 const News = ({ news }) => {
   const dispatch = useDispatch()
   const router = useRouter()
+
   const toggleComponent = () => {
     dispatch({ type: "TOGGLE_OVERVIEW", payload: true })
     router.push("/?news")
@@ -34,12 +35,12 @@ const News = ({ news }) => {
       <h5>Latest News</h5>
       <div className={["news-section", styles.flexDirRow].join(" ")}>
         <div className="news-image-box">
-          {news.image ? (
-            <img src={news.image} alt="image" />
-          ) : news.image !== null ? (
-            <img className="loading" src="./images/loading.gif" alt="image" />
-          ) : (
+          {news.image == null ||
+          news.image ==
+            "https://nfw.ria.ru/flv/file.aspx?ID=59496079&type=mp3" ? (
             <img src="./images/no_result_found.png" alt="image" />
+          ) : (
+            <img src={news.image} alt="image" />
           )}
         </div>
         <div

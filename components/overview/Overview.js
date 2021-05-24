@@ -1,16 +1,17 @@
 import { useEffect } from "react"
+import { connect, useDispatch } from "react-redux"
+import { fetchNews } from "../../redux/actions/newsAction"
+import { fetchOverview } from "../../redux/actions/overviewAction"
+import { fetchCountries } from "../../redux/actions/countriesAction"
 import ActiveCases from "./ActiveCases"
 import Recovered from "./Recovered"
 import TotalCases from "./TotalCases"
 import TotalDeaths from "./TotalDeaths"
 import MapChart from "./MapChart"
-import { connect, useDispatch } from "react-redux"
-import { fetchNews } from "../../redux/actions/newsAction"
-import { fetchOverview } from "../../redux/actions/overviewAction"
-import { fetchCountries } from "../../redux/actions/countriesAction"
-import styles from "../../styles/FlexStyles.module.css"
 import News from "./News"
 import Prevention from "./Prevention"
+import styles from "../../styles/FlexStyles.module.css"
+
 const Overview = ({ overviews, countries, news }) => {
   const countriesValue = countries.map((data) => ({
     country: `${data.countryInfo.iso2}`.toLowerCase(),
@@ -23,6 +24,7 @@ const Overview = ({ overviews, countries, news }) => {
     dispatch(fetchCountries())
     dispatch(fetchNews())
   }, [])
+
   return (
     <>
       <div className="row">

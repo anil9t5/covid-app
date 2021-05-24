@@ -1,24 +1,26 @@
-import Overview from "../components/overview/Overview"
-import Sidebar from "../components/sidebar/Sidebar"
 import { useEffect } from "react"
 import { connect } from "react-redux"
 import { useDispatch } from "react-redux"
-import { useRouter } from "next/router"
 import { fetchAllNews, newsDetailsAction } from "../redux/actions/newsAction"
 import {
   toggleOverviewAction,
   toggleNewsAction,
 } from "../redux/actions/toggleAction"
 import NewsListAll from "../components/news/NewsListAll"
+import Overview from "../components/overview/Overview"
+import Sidebar from "../components/sidebar/Sidebar"
 import NewsInner from "../components/news/NewsInner"
+
 function Home({ news_list, toggleOverview, checkoutNews, newsDetails }) {
   const dispatch = useDispatch()
+
   useEffect(() => {
     dispatch(fetchAllNews())
     dispatch(toggleOverviewAction())
     dispatch(toggleNewsAction())
     dispatch(newsDetailsAction())
   }, [])
+
   return (
     <div className="row">
       <div className="col-lg-3">
