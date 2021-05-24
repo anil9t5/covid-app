@@ -18,14 +18,14 @@ const ActiveCases = ({ styles, active }) => {
       <style jsx>{`
         .overview-box {
           border-radius: 30px;
-          border: 1px solid #ececf0;
+          border: 1px solid #e2ebff;
           padding: 15px;
           width: 180px;
-          height: auto;
+          height: 160px;
           margin-top: 10px;
           span {
             font-size: 14px;
-            color: #666666;
+            color: #7c98c4;
           }
         }
         .overview-box-bg-light {
@@ -36,14 +36,14 @@ const ActiveCases = ({ styles, active }) => {
           font-size: 18px;
         }
         .icon-wrapper {
-          background: #c3e8d1;
+          background: #e8fcfa;
           border-radius: 50%;
           padding: 6px 9px;
           height: 40px;
           width: 40px;
         }
         .icon-color {
-          color: #429b5e;
+          color: #49dbcc;
         }
       `}</style>
     </div>

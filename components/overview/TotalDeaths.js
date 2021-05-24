@@ -22,14 +22,14 @@ const TotalDeaths = ({ styles, deaths }) => {
           border: 1px solid #ececf0;
           padding: 15px;
           width: 180px;
-          height: auto;
+          height: 160px;
           span {
             color: #ffffff;
             font-size: 14px;
           }
         }
         .overview-box-red {
-          background-color: #f77aae;
+          background-color: #f782ac;
         }
 
         .icon-wrapper {
@@ -41,7 +41,7 @@ const TotalDeaths = ({ styles, deaths }) => {
           width: 40px;
         }
         .icon-color {
-          color: #f77aae;
+          color: #f782ac;
         }
         .text-light {
           color: #fbfbfb;

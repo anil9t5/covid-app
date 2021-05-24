@@ -23,7 +23,7 @@ const TotalCases = ({ styles, cases }) => {
           padding: 15px;
           /*border: 1px solid #ebeaf0;*/
           width: 180px;
-          height: auto;
+          height: 160px;
           span {
             color: #ffffff;
             font-size: 14px;
@@ -32,7 +32,7 @@ const TotalCases = ({ styles, cases }) => {
 
         .overview-box-blue {
           /*background-color: #e5f6ff;*/
-          background-color: #3eb3ff;
+          background-color: #30357c;
           border: 1px solid #ececf0;
         }
         .icon-wrapper {
@@ -46,7 +46,7 @@ const TotalCases = ({ styles, cases }) => {
           color: #fbfbfb;
         }
         :global(.icon-color) {
-          color: #3eb3ff;
+          color: #30357c;
         }
       `}</style>
     </div>
