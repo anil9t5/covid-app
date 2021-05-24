@@ -1,36 +1,38 @@
 import { useEffect } from "react"
 import { connect, useDispatch } from "react-redux"
-import { fetchAllNews } from "../../redux/actions/newsAction"
 import { EntypoArrowLongLeft } from "react-entypo"
-import Link from "next/link"
+import { newsDetailsAction } from "../../redux/actions/newsAction"
 import { useRouter } from "next/router"
-import Moment from "react-moment"
 import { Scrollbars } from "rc-scrollbars"
+import Moment from "react-moment"
 import styles from "../../styles/FlexStyles.module.css"
 
 const NewsListAll = ({ news_list }) => {
   const dispatch = useDispatch()
   const router = useRouter()
-  useEffect(() => {
-    dispatch(fetchAllNews())
-  }, [])
 
   const goBack = () => {
     dispatch({ type: "TOGGLE_OVERVIEW", payload: false })
+    router.push("/")
   }
   const checkoutNews = (data) => {
-    router.push({
-      pathname: `news`,
-      query: {
+    dispatch({ type: "TOGGLE_OVERVIEW", payload: false })
+    dispatch({
+      type: "NEWS_ITEM_CHECKOUT",
+      payload: true,
+    })
+    dispatch({
+      type: "NEWS_DETAILS",
+      payload: {
         title: data.title,
-        url: data.urlToImage,
-        publishedAt: data.publishedAt,
-        source: data.source["name"],
-        content: data.content,
-        author: data.author,
+        url: data.image,
+        category: data.category,
+        content: data.description,
       },
     })
+    router.push("/?news_details")
   }
+
   return (
     <div>
       <div className={[styles.flexDirRow, styles.spaceBetween].join(" ")}>
@@ -44,42 +46,32 @@ const NewsListAll = ({ news_list }) => {
       </div>
       <div className="row">
         <Scrollbars style={{ width: "100%", height: 750 }}>
-          {news_list.length > 0 &&
-            news_list.map((data) => (
+          {news_list.data !== undefined &&
+            news_list.data.map((data) => (
               <div className="col-md-3">
-                <Link
-                  as={`/news/${data.title}`}
-                  href={{
-                    pathname: "/news",
-                    query: {
-                      title: data.title,
-                      url: data.urlToImage,
-                      publishedAt: data.publishedAt,
-                      source: data.source["name"],
-                      content: data.content,
-                      author: data.author,
-                    },
-                  }}>
-                  <div id={data.title} className="news-section">
-                    <div className="news-image-box">
-                      {data.urlToImage == null ||
-                      data.urlToImage == "/Static/img/tasnim-main-logo.jpg" ? (
-                        <img src="./images/no_result_found.png" alt="image" />
-                      ) : (
-                        <img src={data.urlToImage} alt="image" />
-                      )}
-                    </div>
-                    <div className="news-content">
-                      <h6>{data.title}</h6>
-                      <span>{data.source["name"]}</span>
-                      <div className="timestamp">
-                        <i className="fa fa-calendar-o" aria-hidden="true" />
-                        &nbsp;
-                        <Moment fromNow>{data.publishedAt}</Moment>
-                      </div>
+                <div
+                  id={data.title}
+                  className="news-section"
+                  onClick={() => checkoutNews(data)}>
+                  <div className="news-image-box">
+                    {data.image == null ||
+                    data.image ==
+                      "https://nfw.ria.ru/flv/file.aspx?ID=59496079&type=mp3" ? (
+                      <img src="./images/no_result_found.png" alt="image" />
+                    ) : (
+                      <img src={data.image} alt="image" />
+                    )}
+                  </div>
+                  <div className="news-content">
+                    <h6>{data.title}</h6>
+                    <span>{data.category}</span>
+                    <div className="timestamp">
+                      <i className="fa fa-calendar-o" aria-hidden="true" />
+                      &nbsp;
+                      <Moment fromNow>{data.published_at}</Moment>
                     </div>
                   </div>
-                </Link>
+                </div>
               </div>
             ))}
         </Scrollbars>

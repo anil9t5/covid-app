@@ -1,18 +1,32 @@
 import { useDispatch } from "react-redux"
 import Moment from "react-moment"
+import { useRouter } from "next/router"
 import styles from "../../styles/FlexStyles.module.css"
 
 const News = ({ news }) => {
   const dispatch = useDispatch()
-
+  const router = useRouter()
   const toggleComponent = () => {
     dispatch({ type: "TOGGLE_OVERVIEW", payload: true })
+    router.push("/?news")
   }
-  let source = ""
-  for (let i in news) {
-    if (news.source !== null) {
-      source = news.source["name"]
-    }
+
+  const checkoutNews = (data) => {
+    dispatch({ type: "TOGGLE_OVERVIEW", payload: false })
+    dispatch({
+      type: "NEWS_ITEM_CHECKOUT",
+      payload: true,
+    })
+    dispatch({
+      type: "NEWS_DETAILS",
+      payload: {
+        title: data.title,
+        url: data.image,
+        category: data.category,
+        content: data.description,
+      },
+    })
+    router.push("/?news_details")
   }
 
   return (
@@ -20,9 +34,9 @@ const News = ({ news }) => {
       <h5>Latest News</h5>
       <div className={["news-section", styles.flexDirRow].join(" ")}>
         <div className="news-image-box">
-          {news.urlToImage ? (
-            <img src={news.urlToImage} alt="image" />
-          ) : news.urlToImage !== null ? (
+          {news.image ? (
+            <img src={news.image} alt="image" />
+          ) : news.image !== null ? (
             <img className="loading" src="./images/loading.gif" alt="image" />
           ) : (
             <img src="./images/no_result_found.png" alt="image" />
@@ -34,13 +48,15 @@ const News = ({ news }) => {
             styles.flexDirCol,
             styles.spaceAround,
           ].join(" ")}>
-          <h5 className="font-weight-bold">{news.title}</h5>
-          <span>Source: {source}</span>
+          <h5 className="font-weight-bold" onClick={() => checkoutNews(news)}>
+            {news.title}
+          </h5>
+          <span>Category: {news.category}</span>
 
           <div className="timestamp">
             <i className="fa fa-calendar-o" aria-hidden="true" />
             &nbsp;&nbsp;
-            <Moment fromNow>{news.publishedAt}</Moment>
+            <Moment fromNow>{news.published_at}</Moment>
           </div>
           <div className="btn-section">
             <button
