@@ -107,4 +107,7 @@ a {
   .prevention-steps-section .image-box {
     width: 80px;
   }
+  .css-4ljt47-MenuList {
+    max-height: 300px !important;
+  }
 }
