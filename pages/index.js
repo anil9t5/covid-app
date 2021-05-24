@@ -19,7 +19,6 @@ function Home({ news_list, toggleOverview, checkoutNews, newsDetails }) {
     dispatch(toggleNewsAction())
     dispatch(newsDetailsAction())
   }, [])
-  console.log(newsDetails)
   return (
     <div className="row">
       <div className="col-lg-3">
