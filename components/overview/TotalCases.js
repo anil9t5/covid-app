@@ -28,7 +28,7 @@ const TotalCases = ({ styles, cases }) => {
           border-radius: 30px;
           padding: 15px;
           /*border: 1px solid #ebeaf0;*/
-          width: 180px;
+          width: 180px !important;
           height: 160px;
           span {
             color: #ffffff;
